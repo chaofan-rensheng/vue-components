@@ -1,0 +1,128 @@
+@import '@/styles/mixins/button.scss';
+@import '@/styles/custom.scss';
+
+.p-btn{
+  outline: none;
+  cursor: pointer;
+  @include button-size(8px, 16px, 8px, 1px);
+  @include button-color($subsidiary-color, $white, $subsidiary-color);
+
+  &-large {
+    @include button-size(10px, 18px, 8px, 1px);
+  }
+
+  &-small {
+    @include button-size(6px, 14px, 8px, 1px);
+  }
+  
+  &-primary{
+    @include button-color(white, $primary-color, $primary-color);
+    &:hover {
+      @include tint($primary-color, .9)
+    }
+  }
+
+  &-info {
+    @include button-color(white, $info-color, $info-color);
+    &:hover {
+      @include tint($info-color, .9)
+    }
+  }
+
+  &-success {
+    @include button-color(white, $success-color, $success-color);
+    &:hover {
+      @include tint($success-color, .9)
+    }
+  }
+
+  &-error {
+    @include button-color(white, $error-color, $error-color);
+    &:hover {
+      @include tint($error-color, .9)
+    }
+  }
+
+  &-warning {
+    @include button-color(white, $warning-color, $warning-color);
+    &:hover {
+      @include tint($warning-color, .9)
+    }
+  }
+
+  &-none {
+    border: none;
+    @include button-color($subsidiary-color, $white, $white);
+    &:hover{
+      @include button-color($subsidiary-color, $white, $white);
+    }
+  }
+
+  &-solid{
+    border-style: solid;
+    @include button-color($subsidiary-color, $white, $subsidiary-color);
+    &:hover {
+      @include button-color($subsidiary-color, $white, $subsidiary-color);
+    }
+  }
+
+  &-dashed{
+    @include button-color($subsidiary-color, $white, $subsidiary-color);
+    &:hover {
+      @include button-color($subsidiary-color, $white, $subsidiary-color);
+    }
+    border-style: dashed;
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed ;
+    @include button-color($subsidiary-color, $white, $subsidiary-color)
+  }
+
+  // &-circle{
+  //   border-radius: 50%;
+  // }
+
+  // &-icon-only{
+  //   width: 32px;
+  //   height: 32px;
+  // }
+}
+
+.p-btn-group{
+  overflow: hidden;
+  :not(.p-btn-group-vertical){
+    .p-btn {
+      float: left;
+      border-radius: 0;
+    }
+
+    .p-btn:nth-of-type(1) {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .p-btn:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  &-vertical {
+    .p-btn{
+      display: block;
+      float: none;
+      border-radius: 0;
+    }
+    .p-btn:nth-of-type(1) {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .p-btn:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}

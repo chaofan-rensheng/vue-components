@@ -1,0 +1,17 @@
+@mixin button-size($padding, $font-size, $border-radius, $border-width) {
+  padding: $padding $padding * 2;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  border-width: $border-width;
+}
+
+@mixin button-color($color, $background-color, $border-color){
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color
+}
+
+@mixin tint($color, $opacity){
+  background-color: rgba($color, $opacity);
+  border-color: rgba($color, $opacity)
+}
